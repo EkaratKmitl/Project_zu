@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Hearing Test Application </string>
+    <string name="btns_start">START TEST</string>
+    <string name="btns_history">MY HISTORY</string>
+    <string name="btns_about">ABOUT APP</string>
+    <string name="btns_exit">Exit</string>
+
+    <string name="play">Hearing</string>
+    <string name="hello_world">Pls  Insert Text</string>
+
+</resources>
+
+
+

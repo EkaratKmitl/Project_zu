@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/back3">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:text="พิมพ์อักษรที่คุณได้ยิน"
+            android:layout_marginLeft="5dp"
+            android:textSize="@dimen/abc_text_size_display_1_material"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#d8791a" />
+
+        <EditText
+            android:id="@+id/editText4"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView1"
+            android:layout_centerHorizontal="true"
+            android:ems="10"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp">
+
+            <requestFocus />
+        </EditText>
+
+        <Button
+            android:id="@+id/bt_insert_text_4"
+            android:layout_width="300dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/editText1"
+            android:layout_centerHorizontal="true"
+            android:text="ส่งค่าที่คุณได้ยิน"
+            android:layout_weight="0.17"
+            android:textSize="@dimen/bt_manu"
+            android:textStyle="italic"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/tt4" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>
