@@ -17,26 +17,34 @@
         </activity>
 
         <activity android:name=".start"></activity>
-        <activity android:name=".myhistory"></activity>
         <activity android:name=".aboutapp"></activity>
 
-        <activity android:name=".countdown_lv1"></activity>
-        <activity android:name=".countdown_lv2"></activity>
-        <activity android:name=".countdown_lv3"></activity>
-        <activity android:name=".countdown_lv4"></activity>
-        <activity android:name=".countdown_lv5"></activity>
+                            <activity android:name=".countdown_lv1"></activity>
 
-        <activity android:name=".play_sound_1"></activity>
-        <activity android:name=".play_sound_2"></activity>
-        <activity android:name=".play_sound_3"></activity>
-        <activity android:name=".play_sound_4"></activity>
-        <activity android:name=".play_sound_5"></activity>
+        <activity android:name=".play_sound_left_lv1"></activity>
+        <activity android:name=".play_sound_left_lv2"></activity>
+        <activity android:name=".play_sound_left_lv3"></activity>
+        <activity android:name=".play_sound_left_lv4"></activity>
+        <activity android:name=".play_sound_left_lv5"></activity>
 
-        <activity android:name=".insert_text_1"></activity>
-        <activity android:name=".insert_text_2"></activity>
-        <activity android:name=".insert_text_3"></activity>
-        <activity android:name=".insert_text_4"></activity>
-        <activity android:name=".insert_text_5"></activity>
+                            <activity android:name=".play_sound_right_lv1"></activity>
+                            <activity android:name=".play_sound_right_lv2"></activity>
+                            <activity android:name=".play_sound_right_lv3"></activity>
+                            <activity android:name=".play_sound_right_lv4"></activity>
+                            <activity android:name=".play_sound_right_lv5"></activity>
+
+
+        <activity android:name=".insert_text_left_lv1"></activity>
+        <activity android:name=".insert_text_left_lv2"></activity>
+        <activity android:name=".insert_text_left_lv3"></activity>
+        <activity android:name=".insert_text_left_lv4"></activity>
+        <activity android:name=".insert_text_left_lv5"></activity>
+
+                            <activity android:name=".insert_text_right_lv1"></activity>
+                            <activity android:name=".insert_text_right_lv2"></activity>
+                            <activity android:name=".insert_text_right_lv3"></activity>
+                            <activity android:name=".insert_text_right_lv4"></activity>
+                            <activity android:name=".insert_text_right_lv5"></activity>
 
         <activity android:name=".sum1"></activity>
         <activity android:name=".sum2"></activity>
@@ -44,8 +52,8 @@
         <activity android:name=".sum4"></activity>
         <activity android:name=".sum5"></activity>
 
-        <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
-             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+
+
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />

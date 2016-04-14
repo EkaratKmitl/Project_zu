@@ -41,7 +41,7 @@ public class countdown_lv1 extends Activity {
                             tvTimer.setText(String.valueOf(strTime));
                         }
                         public void onFinish() {
-                            Intent intent = new Intent(countdown_lv1.this,play_sound_1.class);
+                            Intent intent = new Intent(countdown_lv1.this,play_sound_left_lv1.class);
                             startActivity(intent);
 
                             cdt.cancel();

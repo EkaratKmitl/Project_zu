@@ -18,7 +18,7 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
-            android:text="พิมพ์อักษรที่คุณได้ยิน"
+            android:text="พิมพ์อักษรที่คุณได้ยิน 3"
             android:layout_marginLeft="5dp"
             android:textSize="@dimen/abc_text_size_display_1_material"
             android:textStyle="bold"

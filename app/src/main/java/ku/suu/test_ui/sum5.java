@@ -1,137 +1,227 @@
 package ku.suu.test_ui;
 
-
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
-import com.google.android.gms.common.api.GoogleApiClient;
-
-import java.util.Objects;
 
 public class sum5 extends AppCompatActivity {
-    String data_sound;
     EditText edtInput;
-    TextView txtInput;
-    Button btnClick_next;
+    Button btnClick_next1;
 
-    int sound_1;
-    int a;
-    int b;
-    int intValue;
-    int X;
-
-
-
-    int x;
-    char text_1;
-
-    String Y;
-    private GoogleApiClient client;
-
-    @TargetApi(Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState){
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sum5);
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-      int x = text_1;
-                         /* ImageView image = ( ImageView ) this.findViewById ( R.id.image_A_left );
-                            image.setImageResource ( R.drawable.button_start );  */
 
-//********Play sound ส่งค่ามา ******************************************************************************************
+        SharedPreferences aa = getSharedPreferences("Data_result_left_lv1", Context.MODE_PRIVATE);
+        int Data_result_left_lv1 = aa.getInt("Data_result_left_lv1", -1);
+        int left_lv1 = Data_result_left_lv1;
+        SharedPreferences ab = getSharedPreferences("Data_result_right_lv1", Context.MODE_PRIVATE);
+        int Data_result_right_lv1 = ab.getInt("Data_result_right_lv1", -1);
+        int right_lv1 = Data_result_right_lv1;
 
-        /* PREF_NAME = Data_compare_sound xx  ตัวแปรอ้างอิ้งจากหน้าที่ส่งมา */
-        SharedPreferences sa = getSharedPreferences("Data_compare_sound1", Context.MODE_PRIVATE);
-        int sound_1 = sa.getInt("Data_compare_sound1", X);
+        SharedPreferences ba = getSharedPreferences("Data_result_left_lv2", Context.MODE_PRIVATE);
+        int Data_result_left_lv2 = ba.getInt("Data_result_left_lv2", -1);
+        int left_lv2 = Data_result_left_lv2;
+        SharedPreferences bb = getSharedPreferences("Data_result_right_lv2", Context.MODE_PRIVATE);
+        int Data_result_right_lv2 = bb.getInt("Data_result_right_lv2", -1);
+        int right_lv2 = Data_result_right_lv2;
 
-        SharedPreferences sb = getSharedPreferences("Data_compare_sound2", Context.MODE_PRIVATE);
-        int sound_2 = sb.getInt("Data_compare_sound2", X);
+        SharedPreferences ca = getSharedPreferences("Data_result_left_lv3", Context.MODE_PRIVATE);
+        int Data_result_left_lv3 = ca.getInt("Data_result_left_lv3", -1);
+        int left_lv3 = Data_result_left_lv3;
+        SharedPreferences cb = getSharedPreferences("Data_result_right_lv3", Context.MODE_PRIVATE);
+        int Data_result_right_lv3 = cb.getInt("Data_result_right_lv3", -1);
+        int right_lv3 = Data_result_right_lv3;
 
-        SharedPreferences sc = getSharedPreferences("Data_compare_sound3", Context.MODE_PRIVATE);
-        int sound_3 = sc.getInt("Data_compare_sound3", X);
+        SharedPreferences da = getSharedPreferences("Data_result_left_lv4", Context.MODE_PRIVATE);
+        int Data_result_left_lv4 = da.getInt("Data_result_left_lv4", -1);
+        int left_lv4 = Data_result_left_lv4;
+        SharedPreferences db = getSharedPreferences("Data_result_right_lv4", Context.MODE_PRIVATE);
+        int Data_result_right_lv4 = db.getInt("Data_result_right_lv4", -1);
+        int right_lv4 = Data_result_right_lv4;
 
-        SharedPreferences sd = getSharedPreferences("Data_compare_sound4", Context.MODE_PRIVATE);
-        int sound_4 = sd.getInt("Data_compare_sound4", X);
+        SharedPreferences ea = getSharedPreferences("Data_result_left_lv5", Context.MODE_PRIVATE);
+        int Data_result_left_lv5 = ea.getInt("Data_result_left_lv5", -1);
+        int left_lv5 = Data_result_left_lv5;
+        SharedPreferences eb = getSharedPreferences("Data_result_right_lv5", Context.MODE_PRIVATE);
+        int Data_result_right_lv5 = eb.getInt("Data_result_right_lv5", -1);
+        int right_lv5 = Data_result_right_lv5;
 
-        SharedPreferences se = getSharedPreferences("Data_compare_sound5", Context.MODE_PRIVATE);
-        int sound_5 = se.getInt("Data_compare_sound5", X);
+        Log.d("result_left1", "sum5 =" + Data_result_left_lv1);
+        Log.d("result_right1", "sum5 =" + Data_result_right_lv1);
 
-//________________ตรวจสอบค่าที่ส่งมาจา play_sound_XX.java ให้แสดงออกหน้าจอ________________________________
+        Log.d("result_left2", "sum5 =" + Data_result_left_lv2);
+        Log.d("result_right2", "sum5 =" + Data_result_right_lv2);
 
-        TextView a = (TextView) findViewById(R.id.show_sound1);
-        a.setText("data sound = " + String.valueOf(sound_1));
+        Log.d("result_left3", "sum5 =" + Data_result_left_lv3);
+        Log.d("result_right3", "sum5 =" + Data_result_right_lv3);
 
-        TextView b = (TextView) findViewById(R.id.show_sound2);
-        b.setText("data sound = " + String.valueOf(sound_2));
+        Log.d("result_left4", "sum5 =" + Data_result_left_lv4);
+        Log.d("result_right4", "sum5 =" + Data_result_right_lv4);
 
-        TextView c = (TextView) findViewById(R.id.show_sound3);
-        c.setText("data sound = " + String.valueOf(sound_3));
-
-        TextView d = (TextView) findViewById(R.id.show_sound4);
-        d.setText("data sound = " + String.valueOf(sound_4));
-
-        TextView e = (TextView) findViewById(R.id.show_sound5);
-        e.setText("data sound = " + String.valueOf(sound_5));
-
-//********Insert text  ส่งค่ามา ****************************************************************************************
-
-        /* PREF_NAME ตัวแปรอ้างอิ้งจากหน้าที่ส่งมา */
-        SharedPreferences sh = getSharedPreferences("Data_compare_text1", Context.MODE_PRIVATE);
-        String text_1 = sh.getString("Data_compare_text1", Y);
-
-        SharedPreferences si = getSharedPreferences("Data_compare_text2", Context.MODE_PRIVATE);
-        String text_2 = si.getString("Data_compare_text2", Y);
-
-        SharedPreferences sj = getSharedPreferences("Data_compare_text3", Context.MODE_PRIVATE);
-        String text_3 = sj.getString("Data_compare_text3", Y);
-
-        SharedPreferences sk = getSharedPreferences("Data_compare_text4", Context.MODE_PRIVATE);
-        String text_4 = sk.getString("Data_compare_text4", Y);
-
-        SharedPreferences sl = getSharedPreferences("Data_compare_text5", Context.MODE_PRIVATE);
-        String text_5 = sl.getString("Data_compare_text5", Y);
+        Log.d("result_left5", "sum5 =" + Data_result_left_lv5);
+        Log.d("result_right5", "sum5 =" + Data_result_right_lv5);
 
 
-//________________ตรวจสอบค่าที่ส่งมาจา Isert Text_XX.java ให้แสดงออกหน้าจอ________________________________
+        final ImageView imgShow1=(ImageView)findViewById(R.id.image_lv1_left);
+        final ImageView imgShow2=(ImageView)findViewById(R.id.image_lv1_right);
 
-        //ตรวจสอบค่าที่ส่งมาจา play_sound_XX.java ให้แสดงออกหน้าจอ
-        TextView o = (TextView) findViewById(R.id.show_text1);
-        o.setText("data text = " + String.valueOf(x));
+        final ImageView imgShow3=(ImageView)findViewById(R.id.image_lv2_left);
+        final ImageView imgShow4=(ImageView)findViewById(R.id.image_lv2_right);
 
-        TextView p = (TextView) findViewById(R.id.show_text2);
-        p.setText("data text = " + String.valueOf(text_2));
+        final ImageView imgShow5=(ImageView)findViewById(R.id.image_lv3_left);
+        final ImageView imgShow6=(ImageView)findViewById(R.id.image_lv3_right);
 
-        TextView q = (TextView) findViewById(R.id.show_text3);
-        q.setText("data text = " + String.valueOf(text_3));
+        final ImageView imgShow7=(ImageView)findViewById(R.id.image_lv4_left);
+        final ImageView imgShow8=(ImageView)findViewById(R.id.image_lv4_right);
 
-        TextView r = (TextView) findViewById(R.id.show_text4);
-        r.setText("data text = " + String.valueOf(text_4));
+       final ImageView imgShow9=(ImageView)findViewById(R.id.image_lv5_left);
+       final ImageView imgShow10=(ImageView)findViewById(R.id.image_lv5_right);
 
-        TextView s = (TextView) findViewById(R.id.show_text5);
-        s.setText("data text = " + String.valueOf(text_5));
 
-//***************************************************************************************************************
+//*****************************Process LV1**********************************************************
+        if(Data_result_left_lv1 == 1 ){
 
-        btnClick_next = (Button) findViewById(R.id.bt_sum5);
-        btnClick_next.setOnClickListener(new View.OnClickListener() {
+            if(Data_result_right_lv1 == 1){
+                //11
+                imgShow1.setImageResource(R.drawable.true1);
+                imgShow2.setImageResource(R.drawable.true1);
+            }else{
+                //10
+                imgShow1.setImageResource(R.drawable.true1);
+                imgShow2.setImageResource(R.drawable.fale);
+            }
+        }else  {
+
+            if (Data_result_right_lv1 == 1) {
+                //01
+                imgShow1.setImageResource(R.drawable.fale);
+                imgShow2.setImageResource(R.drawable.true1);
+            } else {
+                //00
+                imgShow1.setImageResource(R.drawable.fale);
+                imgShow2.setImageResource(R.drawable.fale);
+            }
+        }
+
+//*****************************Process LV2**********************************************************
+        if(Data_result_left_lv2 == 1 ){
+
+            if(Data_result_right_lv2 == 1){
+                //11
+                imgShow3.setImageResource(R.drawable.true1);
+                imgShow4.setImageResource(R.drawable.true1);
+            }else{
+                //10
+                imgShow3.setImageResource(R.drawable.true1);
+                imgShow4.setImageResource(R.drawable.fale);
+            }
+        }else  {
+
+            if (Data_result_right_lv2 == 1) {
+                //01
+                imgShow3.setImageResource(R.drawable.fale);
+                imgShow4.setImageResource(R.drawable.true1);
+            } else {
+                //00
+                imgShow3.setImageResource(R.drawable.fale);
+                imgShow4.setImageResource(R.drawable.fale);
+            }
+        }
+
+//*****************************Process LV3**********************************************************
+        if(Data_result_left_lv3 == 1 ){
+
+            if(Data_result_right_lv3 == 1){
+                //11
+                imgShow5.setImageResource(R.drawable.true1);
+                imgShow6.setImageResource(R.drawable.true1);
+            }else{
+                //10
+                imgShow5.setImageResource(R.drawable.true1);
+                imgShow6.setImageResource(R.drawable.fale);
+            }
+        }else  {
+
+            if (Data_result_right_lv3 == 1) {
+                //01
+                imgShow5.setImageResource(R.drawable.fale);
+                imgShow6.setImageResource(R.drawable.true1);
+            } else {
+                //00
+                imgShow5.setImageResource(R.drawable.fale);
+                imgShow6.setImageResource(R.drawable.fale);
+            }
+        }
+//*****************************Process LV4**********************************************************
+        if(Data_result_left_lv4 == 1 ){
+
+            if(Data_result_right_lv4 == 1){
+                //11
+                imgShow7.setImageResource(R.drawable.true1);
+                imgShow8.setImageResource(R.drawable.true1);
+            }else{
+                //10
+                imgShow7.setImageResource(R.drawable.true1);
+                imgShow8.setImageResource(R.drawable.fale);
+            }
+        }else  {
+
+            if (Data_result_right_lv4 == 1) {
+                //01
+                imgShow7.setImageResource(R.drawable.fale);
+                imgShow8.setImageResource(R.drawable.true1);
+            } else {
+                //00
+                imgShow7.setImageResource(R.drawable.fale);
+                imgShow8.setImageResource(R.drawable.fale);
+            }
+        }
+//*****************************Process LV5**********************************************************
+        if(Data_result_left_lv5 == 1 ){
+
+            if(Data_result_right_lv5 == 1){
+                //11
+                imgShow9.setImageResource(R.drawable.true1);
+                imgShow10.setImageResource(R.drawable.true1);
+            }else{
+                //10
+                imgShow9.setImageResource(R.drawable.true1);
+                imgShow10.setImageResource(R.drawable.fale);
+            }
+        }else  {
+
+            if (Data_result_right_lv5 == 1) {
+                //01
+                imgShow9.setImageResource(R.drawable.fale);
+                imgShow10.setImageResource(R.drawable.true1);
+            } else {
+                //00
+                imgShow9.setImageResource(R.drawable.fale);
+                imgShow10.setImageResource(R.drawable.fale);
+            }
+        }
+
+
+//**************************************************************************************************
+        btnClick_next1 = (Button) findViewById(R.id.bt_sum5);
+        btnClick_next1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent z = new Intent(sum5.this, MainActivity.class);
                 startActivity(z);
             }
         });// SetOnclick
-
 
 
     }// onCreate

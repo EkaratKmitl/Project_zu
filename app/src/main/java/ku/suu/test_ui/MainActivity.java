@@ -1,18 +1,26 @@
 package ku.suu.test_ui;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-
 public class MainActivity extends AppCompatActivity
                         implements View.OnClickListener{
+      private DatabaseHelper mHelper;
+              SQLiteDatabase mDb;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+
+        mHelper = new DatabaseHelper(this);
+        mDb = mHelper.getWritableDatabase();
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -37,7 +45,7 @@ public class MainActivity extends AppCompatActivity
                 startActivity(a);
                 break;
             case  R.id.bt_history:
-                Intent b = new Intent(this, myhistory.class);
+                Intent b = new Intent(this, aboutapp.class);
                 startActivity(b);
                 break;
             case  R.id.bt_about:
@@ -50,5 +58,15 @@ public class MainActivity extends AppCompatActivity
 
         }//Swith-Case
     } // Mathoud on Click
+
+    public void onPause() {
+        super.onPause();
+    }  // onPause
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mHelper.close();
+    }
 
 }//Main Class

@@ -18,7 +18,7 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
-            android:text="พิมพ์อักษรที่คุณได้ยิน"
+            android:text="พิมพ์อักษรที่คุณได้ยิน 2"
             android:layout_marginLeft="5dp"
             android:textSize="@dimen/abc_text_size_display_1_material"
             android:textStyle="bold"
@@ -50,12 +50,6 @@
             android:textStyle="italic"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="50dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/tt2" />
 
 
     </LinearLayout>

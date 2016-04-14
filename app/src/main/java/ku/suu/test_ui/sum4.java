@@ -1,27 +1,20 @@
 package ku.suu.test_ui;
 
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-import com.google.android.gms.common.api.GoogleApiClient;
+import android.widget.ImageView;
 
 public class sum4 extends AppCompatActivity {
-    String data_sound;
     EditText edtInput;
-    TextView txtInput;
-    Button btnClick_next;
-
-    int X;
-    String Y;
-    private GoogleApiClient client;
+    Button btnClick_next1;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState){
@@ -29,37 +22,201 @@ public class sum4 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sum4);
 
-//********Play sound ส่งค่ามา ************************************************************************
+        SharedPreferences aa = getSharedPreferences("Data_result_left_lv1", Context.MODE_PRIVATE);
+        int Data_result_left_lv1 = aa.getInt("Data_result_left_lv1", -1);
+        int left_lv1 = Data_result_left_lv1;
+        SharedPreferences ab = getSharedPreferences("Data_result_right_lv1", Context.MODE_PRIVATE);
+        int Data_result_right_lv1 = ab.getInt("Data_result_right_lv1", -1);
+        int right_lv1 = Data_result_right_lv1;
 
-        /* PREF_NAME ตัวแปรอ้างอิ้งจากหน้าที่ส่งมา */
-        SharedPreferences sp = getSharedPreferences("Data_compare_sound4", Context.MODE_PRIVATE);
-        /* Data_compare_row ส่งค่าไปเก็บใน sound_1  */
-        int sound_4 = sp.getInt("Data_compare_sound4", X);
+        SharedPreferences ba = getSharedPreferences("Data_result_left_lv1", Context.MODE_PRIVATE);
+        int Data_result_left_lv2 = ba.getInt("Data_result_left_lv1", -1);
+        int left_lv2 = Data_result_left_lv1;
+        SharedPreferences bb = getSharedPreferences("Data_result_right_lv1", Context.MODE_PRIVATE);
+        int Data_result_right_lv2 = bb.getInt("Data_result_right_lv1", -1);
+        int right_lv2 = Data_result_right_lv1;
 
-        //ตรวจสอบค่าที่ส่งมาจา play_sound_XX.java ให้แสดงออกหน้าจอ
-        TextView a = (TextView) findViewById(R.id.show_sound04);
-        a.setText("data sound = " + String.valueOf(sound_4));
+        SharedPreferences ca = getSharedPreferences("Data_result_left_lv3", Context.MODE_PRIVATE);
+        int Data_result_left_lv3 = ca.getInt("Data_result_left_lv3", -1);
+        int left_lv3 = Data_result_left_lv3;
+        SharedPreferences cb = getSharedPreferences("Data_result_right_lv3", Context.MODE_PRIVATE);
+        int Data_result_right_lv3 = cb.getInt("Data_result_right_lv3", -1);
+        int right_lv3 = Data_result_right_lv3;
+
+        SharedPreferences da = getSharedPreferences("Data_result_left_lv4", Context.MODE_PRIVATE);
+        int Data_result_left_lv4 = da.getInt("Data_result_left_lv4", -1);
+        int left_lv4 = Data_result_left_lv4;
+        SharedPreferences db = getSharedPreferences("Data_result_right_lv4", Context.MODE_PRIVATE);
+        int Data_result_right_lv4 = db.getInt("Data_result_right_lv4", -1);
+        int right_lv4 = Data_result_right_lv4;
+
+        Log.d("result_left1", "sum4 =" + Data_result_left_lv1);
+        Log.d("result_right1", "sum4 =" + Data_result_right_lv1);
+
+        Log.d("result_left2", "sum4 =" + Data_result_left_lv2);
+        Log.d("result_right2", "sum4 =" + Data_result_right_lv2);
+
+        Log.d("result_left3", "sum4 =" + Data_result_left_lv3);
+        Log.d("result_right3", "sum4 =" + Data_result_right_lv3);
+
+        Log.d("result_left4", "sum4 =" + Data_result_left_lv4);
+        Log.d("result_right4", "sum4 =" + Data_result_right_lv4);
 
 
-//********Insert text  ส่งค่ามา **********************************************************************
+                                     /*   SharedPreferences ea = getSharedPreferences("Data_result_left_lv5", Context.MODE_PRIVATE);
+                                        int Data_result_left_lv5 = ea.getInt("Data_result_left_lv5", -1);
+                                        int left_lv5 = Data_result_left_lv4;
+                                        SharedPreferences eb = getSharedPreferences("Data_result_right_lv5", Context.MODE_PRIVATE);
+                                        int Data_result_right_lv5 = eb.getInt("Data_result_right_lv5", -1);
+                                        int right_lv5 = Data_result_right_lv5;
+        */
 
-        /* PREF_NAME ตัวแปรอ้างอิ้งจากหน้าที่ส่งมา */
-        SharedPreferences sk = getSharedPreferences("Data_compare_text4", Context.MODE_PRIVATE);
-        /* Data_compare_row ส่งค่าไปเก็บใน sound_1  */
-        String text_4 = sk.getString("Data_compare_text4", Y);
+        final ImageView imgShow1=(ImageView)findViewById(R.id.image_lv1_left);
+        final ImageView imgShow2=(ImageView)findViewById(R.id.image_lv1_right);
+
+        final ImageView imgShow3=(ImageView)findViewById(R.id.image_lv2_left);
+        final ImageView imgShow4=(ImageView)findViewById(R.id.image_lv2_right);
+
+        final ImageView imgShow5=(ImageView)findViewById(R.id.image_lv3_left);
+        final ImageView imgShow6=(ImageView)findViewById(R.id.image_lv3_right);
+
+        final ImageView imgShow7=(ImageView)findViewById(R.id.image_lv4_left);
+        final ImageView imgShow8=(ImageView)findViewById(R.id.image_lv4_right);
+
+     /*   final ImageView imgShow9=(ImageView)findViewById(R.id.image_lv5_left);
+        final ImageView imgShow10=(ImageView)findViewById(R.id.image_lv5_right);*/
 
 
-        //ตรวจสอบค่าที่ส่งมาจา play_sound_XX.java ให้แสดงออกหน้าจอ
-        TextView b = (TextView) findViewById(R.id.show_text04);
-        b.setText("data text = " + String.valueOf(text_4));
+//*****************************Process LV1**********************************************************
+        if(Data_result_left_lv1 == 1 ){
 
+            if(Data_result_right_lv1 == 1){
+                //11
+                imgShow1.setImageResource(R.drawable.true1);
+                imgShow2.setImageResource(R.drawable.true1);
+            }else{
+                //10
+                imgShow1.setImageResource(R.drawable.true1);
+                imgShow2.setImageResource(R.drawable.fale);
+            }
+        }else  {
+
+            if (Data_result_right_lv1 == 1) {
+                //01
+                imgShow1.setImageResource(R.drawable.fale);
+                imgShow2.setImageResource(R.drawable.true1);
+            } else {
+                //00
+                imgShow1.setImageResource(R.drawable.fale);
+                imgShow2.setImageResource(R.drawable.fale);
+            }
+        }
+
+//*****************************Process LV2**********************************************************
+        if(Data_result_left_lv2 == 1 ){
+
+            if(Data_result_right_lv2 == 1){
+                //11
+                imgShow3.setImageResource(R.drawable.true1);
+                imgShow4.setImageResource(R.drawable.true1);
+            }else{
+                //10
+                imgShow3.setImageResource(R.drawable.true1);
+                imgShow4.setImageResource(R.drawable.fale);
+            }
+        }else  {
+
+            if (Data_result_right_lv2 == 1) {
+                //01
+                imgShow3.setImageResource(R.drawable.fale);
+                imgShow4.setImageResource(R.drawable.true1);
+            } else {
+                //00
+                imgShow3.setImageResource(R.drawable.fale);
+                imgShow4.setImageResource(R.drawable.fale);
+            }
+        }
+
+//*****************************Process LV3**********************************************************
+        if(Data_result_left_lv3 == 1 ){
+
+            if(Data_result_right_lv3 == 1){
+                //11
+                imgShow5.setImageResource(R.drawable.true1);
+                imgShow6.setImageResource(R.drawable.true1);
+            }else{
+                //10
+                imgShow5.setImageResource(R.drawable.true1);
+                imgShow6.setImageResource(R.drawable.fale);
+            }
+        }else  {
+
+            if (Data_result_right_lv3 == 1) {
+                //01
+                imgShow5.setImageResource(R.drawable.fale);
+                imgShow6.setImageResource(R.drawable.true1);
+            } else {
+                //00
+                imgShow5.setImageResource(R.drawable.fale);
+                imgShow6.setImageResource(R.drawable.fale);
+            }
+        }
+//*****************************Process LV4**********************************************************
+         if(Data_result_left_lv4 == 1 ){
+
+            if(Data_result_right_lv4 == 1){
+                //11
+                imgShow7.setImageResource(R.drawable.true1);
+                imgShow8.setImageResource(R.drawable.true1);
+            }else{
+                //10
+                imgShow7.setImageResource(R.drawable.true1);
+                imgShow8.setImageResource(R.drawable.fale);
+            }
+        }else  {
+
+            if (Data_result_right_lv4 == 1) {
+                //01
+                imgShow7.setImageResource(R.drawable.fale);
+                imgShow8.setImageResource(R.drawable.true1);
+            } else {
+                //00
+                imgShow7.setImageResource(R.drawable.fale);
+                imgShow8.setImageResource(R.drawable.fale);
+            }
+        }
+//*****************************Process LV5**********************************************************
+     /*   if(Data_result_left_lv5 == 1 ){
+
+            if(Data_result_right_lv5 == 1){
+                //11
+                imgShow9.setImageResource(R.drawable.true1);
+                imgShow10.setImageResource(R.drawable.true1);
+            }else{
+                //10
+                imgShow9.setImageResource(R.drawable.true1);
+                imgShow10.setImageResource(R.drawable.fale);
+            }
+        }else  {
+
+            if (Data_result_right_lv5 == 1) {
+                //01
+                imgShow9.setImageResource(R.drawable.fale);
+                imgShow10.setImageResource(R.drawable.true1);
+            } else {
+                //00
+                imgShow9.setImageResource(R.drawable.fale);
+                imgShow10.setImageResource(R.drawable.fale);
+            }
+        }
+
+        */
 //**************************************************************************************************
-
-        btnClick_next = (Button) findViewById(R.id.bt_sum4);
-        btnClick_next.setOnClickListener(new View.OnClickListener() {
+        btnClick_next1 = (Button) findViewById(R.id.bt_sum4);
+        btnClick_next1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent z = new Intent(sum4.this, countdown_lv5.class);
+                Intent z = new Intent(sum4.this, MainActivity.class);
                 startActivity(z);
             }
         });// SetOnclick

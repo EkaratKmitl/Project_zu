@@ -11,7 +11,7 @@ import android.widget.Button;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class play_sound_1 extends Activity {
+public class play_sound_right_lv1 extends Activity {
     MediaPlayer mpBgm;
     Timer timer;
     Button btnOK;
@@ -28,7 +28,7 @@ public class play_sound_1 extends Activity {
         btnOK = (Button)findViewById(R.id.bt_play_sound_1);
         btnOK.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent a = new Intent(play_sound_1.this, insert_text_left_lv1.class);
+                Intent a = new Intent(play_sound_right_lv1.this, insert_text_right_lv1.class);
                 startActivity(a);
                 timer.cancel();
             }
@@ -39,35 +39,31 @@ public class play_sound_1 extends Activity {
         int x = 1;
 
         int currentNumber = 0;
-        int[] sound_left = {R.raw.z_left_lv1,R.raw.i_left_lv1
-                           ,R.raw.p_left_lv1,R.raw.g_left_lv1
-                           ,R.raw.k_left_lv1
-                           };
 
         int[] sound_right = {R.raw.z_right_lv1,R.raw.i_right_lv1
-                            ,R.raw.p_right_lv1,R.raw.g_right_lv1
-                            ,R.raw.k_right_lv1
-                            };
+                ,R.raw.p_right_lv1,R.raw.g_right_lv1
+                ,R.raw.k_right_lv1
+        };
 
         @Override
         public void run() {
-            play_sound_1.this.runOnUiThread(new Runnable() {// <-------- รัน Runnable ในเธรดหลัก เพื่อจะได้เข้าถึง UI ได้
+            play_sound_right_lv1.this.runOnUiThread(new Runnable() {// <-------- รัน Runnable ในเธรดหลัก เพื่อจะได้เข้าถึง UI ได้
                 @Override
                 public void run() {
 
                     if (x == 0) {
-                        mpBgm = MediaPlayer.create(play_sound_1.this, sound_left[currentNumber++]);
+                        mpBgm = MediaPlayer.create(play_sound_right_lv1.this, sound_right[currentNumber++]);
                         mpBgm.start();
 
                         x=1;}
                     else {
-                        mpBgm = MediaPlayer.create(play_sound_1.this, sound_left[currentNumber]);
+                        mpBgm = MediaPlayer.create(play_sound_right_lv1.this, sound_right[currentNumber]);
                         mpBgm.start();
 
 //**************************************************************************************************************************
-                        SharedPreferences sp = getSharedPreferences("Data_compare_sound1", Context.MODE_PRIVATE);//Pref_name = Sound A = ชื่ออะไรก็ได้ เพราะมันจะไปกลายเป็นชื่อไฟล์ที่เก็บลงในเครื่อง
+                        SharedPreferences sp = getSharedPreferences("Data_compare_sound_right_lv1", Context.MODE_PRIVATE);//Pref_name = Sound A = ชื่ออะไรก็ได้ เพราะมันจะไปกลายเป็นชื่อไฟล์ที่เก็บลงในเครื่อง
                         SharedPreferences.Editor editor = sp.edit();//Context.MODE_PRIVATE = การกำหนดรูปแบบของการสร้างไฟล์ ซึ่งในที่นี้คือการสร้างไฟล์โดยให้ไฟล์นั้นสามารถเข้าถึงได้จากแอปพลิเคชันนี้เท่านั้น
-                        editor.putInt("Data_compare_sound1", currentNumber);
+                        editor.putInt("Data_compare_sound_right_lv1", currentNumber);
                         editor.commit();
 
              /*กำหนดให้เก็บข้อมูลลงไปโดยใช้ชื่อว่า Data_compare_soundA ส่วนค่าที่เก็บก็คือค่าจากตัวแปร  currentNumber */
