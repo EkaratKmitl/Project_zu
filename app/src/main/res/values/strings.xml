@@ -6,8 +6,7 @@
     <string name="btns_exit">Exit</string>
 
     <string name="play">Hearing</string>
-    <string name="hello_world">Pls  Insert Text</string>
-
+    <string name="action_settings">Settings</string>
 </resources>
 
 

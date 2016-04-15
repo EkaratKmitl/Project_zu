@@ -45,11 +45,11 @@ public class MainActivity extends AppCompatActivity
                 startActivity(a);
                 break;
             case  R.id.bt_history:
-                Intent b = new Intent(this, aboutapp.class);
+                Intent b = new Intent(this, Myhistory.class);
                 startActivity(b);
                 break;
             case  R.id.bt_about:
-                Intent c = new Intent(this, aboutapp.class);
+                Intent c = new Intent(this, show_chat.class);
                 startActivity(c);
                 break;
             case  R.id.bt_exit:

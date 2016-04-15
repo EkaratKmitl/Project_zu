@@ -9,36 +9,41 @@
 
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="#05c70f">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:weightSum="1">
+        android:weightSum="1"
+        android:background="#6ffb60">
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:weightSum="1"
+            android:layout_weight="0.03">
 
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="insert"
-                android:id="@+id/insert_button" />
+                android:layout_width="125dp"
+                android:layout_height="50dp"
+                android:text="กลับหน้าหลัก"
+                android:id="@+id/bt_home"
+                android:layout_marginTop="10dp"
+                android:layout_weight="0.13" />
 
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="update"
-                android:id="@+id/update_button" />
+                android:layout_width="125dp"
+                android:layout_height="50dp"
+                android:text="ลบทั้งหมด"
+                android:id="@+id/bt_clearall"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="100dp"
+                android:layout_weight="0.22" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="delete"
-                android:id="@+id/delete_button" />
+
         </LinearLayout>
     </LinearLayout>
 
@@ -46,13 +51,15 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="100dp">
+        android:layout_marginTop="70dp">
 
         <ListView
-            android:id="@+id/list_view"
-            android:layout_width="wrap_content"
+            android:id="@+id/listView1"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/button" />
+            android:layout_margin="30dp"
+            android:cacheColorHint="#00000000"
+            android:background="#c0fcba" />
     </LinearLayout>
 
 

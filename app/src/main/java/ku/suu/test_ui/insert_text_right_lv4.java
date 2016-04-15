@@ -14,7 +14,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class insert_text_right_lv4 extends AppCompatActivity {
+
     DatabaseHelper mHelper;
     SQLiteDatabase mDb;
 
@@ -28,6 +32,8 @@ public class insert_text_right_lv4 extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        final Date date = new Date();
         mHelper = new DatabaseHelper(this);
         mDb = mHelper.getWritableDatabase();
 
@@ -113,6 +119,7 @@ public class insert_text_right_lv4 extends AppCompatActivity {
 //**********************************************************************************************
                         ContentValues cv;
                         cv = new ContentValues();
+                        cv.put(DatabaseHelper.COL_DATE, dateFormat.format(date));
                         cv.put(DatabaseHelper.COL_SOUND_LEFT_LV1, Data_compare_sound_left_lv1);
                         cv.put(DatabaseHelper.COL_SOUND_LEFT_LV2, Data_compare_sound_left_lv2);
                         cv.put(DatabaseHelper.COL_SOUND_LEFT_LV3, Data_compare_sound_left_lv3);
@@ -121,6 +128,7 @@ public class insert_text_right_lv4 extends AppCompatActivity {
 
                         ContentValues ck;
                         ck = new ContentValues();
+                        ck.put(DatabaseHelper.COL_DATE, dateFormat.format(date));
                         ck.put(DatabaseHelper.COL_SOUND_RIGHT_LV1, Data_compare_sound_right_lv1);
                         ck.put(DatabaseHelper.COL_SOUND_RIGHT_LV2, Data_compare_sound_right_lv2);
                         ck.put(DatabaseHelper.COL_SOUND_RIGHT_LV3, Data_compare_sound_right_lv3);

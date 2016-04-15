@@ -13,6 +13,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class insert_text_right_lv1 extends AppCompatActivity {
 
     DatabaseHelper mHelper;
@@ -27,6 +30,8 @@ public class insert_text_right_lv1 extends AppCompatActivity {
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
+        final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        final Date date = new Date();
         mHelper = new DatabaseHelper(this);
         mDb = mHelper.getWritableDatabase();
 
@@ -99,11 +104,13 @@ public class insert_text_right_lv1 extends AppCompatActivity {
 
                         ContentValues cv;
                         cv = new ContentValues();
+                        cv.put(DatabaseHelper.COL_DATE, dateFormat.format(date));
                         cv.put(DatabaseHelper.COL_SOUND_LEFT_LV1, Data_compare_sound_left_lv1);
                         mDb.insert(DatabaseHelper.TABLE_NAME_LEFT, null, cv);
 
                         ContentValues ck;
                         ck = new ContentValues();
+                        ck.put(DatabaseHelper.COL_DATE, dateFormat.format(date));
                         ck.put(DatabaseHelper.COL_SOUND_RIGHT_LV1, Data_compare_sound_right_lv1);
                         mDb.insert(DatabaseHelper.TABLE_NAME_RIGHT, null, ck);
 //**************************************************************************************************

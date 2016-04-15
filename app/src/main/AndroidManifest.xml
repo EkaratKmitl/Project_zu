@@ -18,8 +18,10 @@
 
         <activity android:name=".start"></activity>
         <activity android:name=".aboutapp"></activity>
-
-                            <activity android:name=".countdown_lv1"></activity>
+        <activity android:name=".Myhistory"></activity>
+         <activity android:name=".detail_myhistory"></activity>
+        <activity android:name=".show_chat"></activity>
+        <activity android:name=".countdown_lv1"></activity>
 
         <activity android:name=".play_sound_left_lv1"></activity>
         <activity android:name=".play_sound_left_lv2"></activity>

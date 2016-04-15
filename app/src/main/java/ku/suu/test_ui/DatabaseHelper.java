@@ -6,6 +6,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String TAG = DatabaseHelper.class.getSimpleName();
 
@@ -15,6 +18,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String TABLE_NAME_RIGHT = "SoundRight";
     public static final String COL_IDL = "_id";
     public static final String COL_IDR = "_id";
+    public static final String COL_DATE = "date";
 
     public static final String COL_SOUND_LEFT_LV1 = "sound_left_lv1";
     public static final String COL_SOUND_LEFT_LV2 = "sound_left_lv2";
@@ -34,9 +38,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date date = new Date();
 
         String SQL_CREATE_TABLE_LEFT = "CREATE TABLE " + TABLE_NAME_LEFT + "("
                 + COL_IDL + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + COL_DATE + " TEXT, "
                 + COL_SOUND_LEFT_LV1 + " TEXT, "
                 + COL_SOUND_LEFT_LV2 + " TEXT, "
                 + COL_SOUND_LEFT_LV3 + " TEXT, "
@@ -46,6 +53,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         String SQL_CREATE_TABLE_RIGHT = "CREATE TABLE " + TABLE_NAME_RIGHT + "("
                 + COL_IDR + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + COL_DATE + " TEXT, "
                 + COL_SOUND_RIGHT_LV1 + " TEXT, "
                 + COL_SOUND_RIGHT_LV2 + " TEXT, "
                 + COL_SOUND_RIGHT_LV3 + " TEXT, "
@@ -55,7 +63,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         Log.d(TAG, "Inserting initial data");
 
+
+
         ContentValues cv = new ContentValues();
+        cv.put(COL_DATE, dateFormat.format(date));
         cv.put(COL_SOUND_LEFT_LV1, "test");
         cv.put(COL_SOUND_LEFT_LV2, "test");
         cv.put(COL_SOUND_LEFT_LV3, "test");
@@ -63,13 +74,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cv.put(COL_SOUND_LEFT_LV5, "test");
         db.insert(TABLE_NAME_LEFT, null, cv);
 
+
         ContentValues ck = new ContentValues();
+        ck.put(COL_DATE, dateFormat.format(date));
         ck.put(COL_SOUND_RIGHT_LV1, "test");
         ck.put(COL_SOUND_RIGHT_LV2, "test");
         ck.put(COL_SOUND_RIGHT_LV3, "test");
         ck.put(COL_SOUND_RIGHT_LV4, "test");
         ck.put(COL_SOUND_RIGHT_LV5, "test");
         db.insert(TABLE_NAME_RIGHT, null, ck);
+
+
 
 
 
